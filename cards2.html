@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width:device-width; initial-scale:1.0;">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      *{box-sizing: border-box;}
+      div {
+        position: absolute;
+        width: 25vw;
+        height: 35vw;
+        padding: 2vw;
+        border-radius: 1vw;
+        font-family: sans-serif;
+        font-size: 3vw;
+        font-weight: bold;
+        text-align: center;
+		line-height: 4vw;
+        box-shadow: 6px 6px 20px #000;
+      }
+      #container {
+        background: blue;
+        overflow: hidden;
+      }
+	  #container:active {background-color: yellow;}
+
+	  #container:active > #game > #card3 {
+		top: 10vh;
+		transform: rotate(20deg);
+	  }
+      #game {
+        position: relative;
+        margin: 60vh auto;
+        width: 50vw;
+        height: 50vw;
+        transform: translate(0%, -50%);
+      }
+      #card1 {
+		z-index: -2;
+        transform: rotate(-15deg);
+        background: #000;
+		text-align: left;
+		font-size: 2.8vw;
+        color: #FFF;
+      }
+      #card2, #card3 {
+        left: 25vw;
+        background: #FFF;
+        color: ##000;
+      }
+	  #card2 {
+		top: 10vh;
+		transform: rotate(20deg);
+		z-index: 1;
+	  }
+	  #card2:active {animation: card2Switch 1s ease forwards;}
+
+	  #card3 {transform: rotate(15deg);}
+
+      .logo {
+        position: absolute;
+        bottom: 0;
+        left: 2vw;
+        padding: 0.5vw;
+        font-size: 1.2vw;
+      }
+	  @keyframes card2Switch {
+		100% {
+		  top: 0vh;
+		  transform: rotate(15deg);
+		  z-index: -1;
+		}
+	  }
+    </style>
+  </head>
+  <body id="container">
+    <section id="game">
+      <div id="card1">
+		___________:<br />Hours of fun.<br />Easy to use.<br />Perfect for ___________!
+        <span class="logo">
+          <i class="fa fa-optin-monster"></i>Cards Against Developers
+        </span>
+      </div>
+      <div id="card2">HTML
+        <span class="logo">
+          <i class="fa fa-optin-monster"></i>Cards Against Developers
+        </span>
+      </div>
+	  <div id="card3">CSS
+        <span class="logo">
+          <i class="fa fa-optin-monster"></i>Cards Against Developers
+        </span>
+      </div>
+    </section>
+  </body>
+</html>
